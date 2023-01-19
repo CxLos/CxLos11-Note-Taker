@@ -1,16 +1,15 @@
 #  <Your-Project-Title>
 
 ## Description
-
+```
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
-
+```
 ## Table of Contents 
-
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -19,7 +18,6 @@ Provide a short description explaining the what, why, and how of your project. U
 - [Badges](#badges)
 - [Features](#features)
 - [Tests](#tests)
-
 
 ## Installation
 
@@ -33,7 +31,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 [CxLos11-Note-Taker](https://cxlos.github.io/Cxlos11-Note-Taker/)
 
-![Note Taker Preview](./assets/images2/Screenshot-102509.png)
+![Note Taker Preview](./assets/images/Screenshot-102509.png)
 
 ## Credits
 

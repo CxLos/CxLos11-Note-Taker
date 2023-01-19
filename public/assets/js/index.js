@@ -4,6 +4,11 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+//
+// const termData = require('./db/db.json');
+
+// REFER BACK TO EXERCISE 7 & 12
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
