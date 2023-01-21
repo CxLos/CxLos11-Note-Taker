@@ -62,7 +62,9 @@ body {
 
 .list-item-title {
   display: inline-block;
-  width: 75%;
+  width: 60%;
+  border: none;
+  margin: 0px 20px 0px 0px;
 }
 
 .list-container i {
@@ -75,4 +77,8 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+.notey {
+  font-size: 20px;
 }
