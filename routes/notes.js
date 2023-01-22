@@ -1,21 +1,19 @@
 // variables
-const express = require('express');
-const app = express();
-const router = express.Router();
-const { readFromFile, readAndAppend } = require('../public/assets/js/helper');
-const random = require('../public/assets/js/random');
+const router = require('express').Router();
+const { readFromFile, readAndAppend } = require('../db/helper');
+const random = require('../db/random');
 
-router.get('/', (req, res) => {
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
-    console.info(`${req.method} request received to add note`);
-    
+router.get('/notes', (req, res) => {
+  const returnedJsonData = readFromFile();
+	res.send(returnedJsonData);
+  console.info(`${req.method} request received to add a note`);
   });
   
   // POST Route for new note
-  router.post('/', (req, res) => {
+  router.post('/notes', (req, res) => {
     console.info(`${req.method} request received to add a note`);
   
-    const { title, note } = req.body;
+    const { title, note, } = req.body;
   
     if (req.body) {
       const newNote = {
@@ -30,5 +28,9 @@ router.get('/', (req, res) => {
       res.error('Error adding note');
     }
   });
+
+  // router.delete('/notes/:id', (req, res) => {
+  //     deleteNote();
+  //   });
 
   module.exports = router;

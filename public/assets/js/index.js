@@ -3,11 +3,6 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-// const apin = require('.../routes/main');
-//
-// const termData = require('./db/db.json');
-
-// REFER BACK TO EXERCISE 7 & 12
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -62,7 +57,7 @@ const renderActiveNote = () => {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
+    noteText.value = activeNote.note;
   } else {
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
