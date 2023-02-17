@@ -23,4 +23,17 @@ const readAndAppend = (content, file) => {
   });
 };
 
-module.exports = { readFromFile, writeToFile, readAndAppend };
+const deleteNote = (id) => {
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      const deletedNote = parsedData.filter(note => note.id != id);
+      parsedData.push(deletedNote);
+      writeToFile('db/db.json', parsedData);
+    }
+  });
+}
+
+module.exports = { readFromFile, writeToFile, readAndAppend, deleteNote };

@@ -1,6 +1,6 @@
 // variables
 const router = require('express').Router();
-const { readFromFile, readAndAppend } = require('../db/helper');
+const { readFromFile, readAndAppend, deleteNote } = require('../db/helper');
 const random = require('../db/random');
 
 router.get('/notes', (req, res) => {
@@ -29,8 +29,17 @@ router.get('/notes', (req, res) => {
     }
   });
 
-  // router.delete('/notes/:id', (req, res) => {
-  //     deleteNote();
-  //   });
+  router.delete('/notes/:id', async (req, res) => {
+
+      const notesArray = JSON.parse(readFromFile());
+      
+      for (let i = 0; i<notesArray.length; i++ ) {
+        if(notesArray[i].id == req.params.id) {
+          console.log('we found a match', i, notesArray[i])
+          notesArray.splice(i, 1)
+        }
+      }    
+      // console.log(notesArray)
+    });
 
   module.exports = router;
